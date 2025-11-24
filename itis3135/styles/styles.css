@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    background-color: #FFFFFF;
+    color: #222;
+    font-family: Helvetica, sans-serif;
+}
+
+.page-wrapper {
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+header, main, footer {
+    padding: 15px 10px;
+}
+
+h1 {
+    font-family: "Goudy Old Style", "Garamond", serif;
+    color: #0b3d2e;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-family: "Goudy Old Style", "Garamond", serif;
+    color: #0b3d2e;
+    margin-top: 10px;
+}
+
+h3 {
+    font-family: "Goudy Old Style", "Garamond", serif;
+    color: #0b3d2e;
+    margin-top: 10px;
+}
+
+p, .facts li {
+    line-height: 1.6;
+    color: black;
+}
+
+.header-nav {
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.CCI-logo {
+    text-align: center;
+    margin: 10px 10px
+}
+
+.alexis-photo {
+    line-height: 1.6;
+    color: #0b3d2e;
+}
+.alexis-photo img {
+    display: block;
+    margin: 0 auto;
+    border: 4px solid #0b3d2e;
+    border-radius: 0;
+}
+
+.alexis-photo figcaption {
+    text-align: center;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+.section-divider {
+    border: none;
+    border-top: 1px solid #ffffff55;
+}
+
+.section-divider-dark {
+    border-top-color: #0b3d2e;
+    margin-top: 2rem;
+}
+
+footer {
+    border-top: 1px solid #ffffff55;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.footer-info p {
+    margin: 0.20rem 0;
+}
+
+header nav a,
+footer nav a {
+    text-decoration: none;
+    color: #d6f5e3;
+    margin: 0 0.2rem;
+}
+
+header nav a:hover,
+footer nav a:hover {
+    text-decoration: underline;
+}
+
+.footer-info {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #a0a0a0;
+}
+
+.separator {
+    margin: 0 20px;
+    color: #0b3d2e;
+}
+
+a {
+    color: #0b3d2e;
+}
+a:hover {
+    color: #0b3d2e;
+}
+a:visited {
+    color: #0b3d2e;
+}
+a:active {
+    color: black;
+}
