@@ -46,7 +46,13 @@ p, .facts li {
 
 .CCI-logo {
     text-align: center;
-    margin: 10px 10px
+    margin: 10px 10px;
+}
+
+.CCI-logo img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
 }
 
 .alexis-photo {
