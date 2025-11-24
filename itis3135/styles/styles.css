@@ -89,7 +89,7 @@ footer {
 header nav a,
 footer nav a {
     text-decoration: none;
-    color: #d6f5e3;
+    color: #0b3d2e;
     margin: 0 0.2rem;
 }
 
@@ -110,15 +110,13 @@ footer nav a:hover {
     color: #0b3d2e;
 }
 
-a {
+a,
+a:visited,
+a:hover,
+a:focus {
     color: #0b3d2e;
 }
-a:hover {
-    color: #0b3d2e;
-}
-a:visited {
-    color: #0b3d2e;
-}
+
 a:active {
     color: black;
 }

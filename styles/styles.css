@@ -52,10 +52,9 @@ footer nav a:hover {
     margin: 0 0.3rem;
 }
 
-a:visited {
-    color: #0b3d2e;
-}
-
+a,
+a:visited,
+a:hover,
 a:active {
-    color: black;
+    color: #0b3d2e;
 }
