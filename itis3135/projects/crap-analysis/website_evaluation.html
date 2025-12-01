@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Astute Axolotl | Website Evaluations</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+        :root {
+            --ink: #202c39;
+            --charcoal: #283845;
+            --bone: #b8b08d;
+            --sand: #f2d492;
+            --accent: #f29559;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--bone);
+            background: linear-gradient(39deg, #202c39, #283845, #b8b08d, #f2d492);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .page {
+            width: min(1200px, 92%);
+            margin: 0 auto;
+            padding: 3rem 0 4rem;
+        }
+
+        /* ---------- HEADER ---------- */
+
+       header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 1.5rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .brand p {
+            margin-top: -20px;
+            color: var(--sand);
+        }
+
+        nav a {
+            color: var(--accent);
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .brand-header {
+            color: var(--ink)
+        }
+
+        /* ---------- MAIN CONTENT ---------- */
+
+        h2 {
+            font-size: 1.6rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            text-align: left;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        main p {
+            max-width: 70ch;
+            margin: 0 auto 1.4rem;
+        }
+
+        .intro-text {
+            margin-bottom: 2rem;
+        }
+
+        section.site-review {
+            border: 1px solid var(--sand);
+            padding: 1.4rem;
+            margin: 1.5rem 0;
+            background: var(--charcoal);
+        }
+
+        h3 {
+            margin-top: 0;
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            color: var(--sand);
+        }
+
+        section.site-review a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        section.site-review a:hover {
+            text-decoration: underline;
+        }
+
+        section.site-review p {
+            margin-top: 0.4rem;
+        }
+
+        .crap-list {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin-top: 0.8rem;
+        }
+
+        .crap-list li {
+            margin-bottom: 0.7rem;
+        }
+
+        .crap-label {
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--sand);
+        }
+
+        /* ---------- FOOTER ---------- */
+
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            color: var(--sand);
+        }
+
+        footer nav a {
+            color: var(--accent);
+            text-decoration: none;
+            margin: 0 0.5rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+        footer nav a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div class="brand">
+                <div class="brand-header">
+                    <h1>Astute Axolotl</h1>
+                    <p class="tagline"><em>Learning More, Everyday.</em></p>
+                </div>
+            </div>
+            <nav aria-label="Mascot navigation">
+                <a href="/itis3135/projects/crap-analysis/website_evaluation.html">Website Evaluations</a>
+            </nav>
+        </header>
+
+        <main>
+            <h2 id="eval" class="brand-header">Website Evaluations</h2>
+
+            <p class="intro-text brand-header">
+                Below are two websites evaluated using the CRAP design principles:
+                <strong>Contrast</strong>, <strong>Repetition</strong>, <strong>Alignment</strong>, and
+                <strong>Proximity</strong>. One example shows a well-designed site, and the other highlights common
+                problems when these principles are ignored.
+            </p>
+
+            <!-- GOOD SITE REVIEW -->
+            <section class="site-review">
+                <h3>
+                    <a href="https://www.apple.com" target="_blank" rel="noopener">Apple (Well-Designed Example)</a>
+                </h3>
+                <p>
+                    Apple’s homepage is a clean, modern marketing site for their hardware and services. It focuses on a few
+                    key products at a time, using strong visual hierarchy and lots of white space to guide your attention.
+                </p>
+                <ul class="crap-list">
+                    <li><span class="crap-label">Contrast:</span> High contrast between product images, bold text, and clean backgrounds — very readable.</li>
+                    <li><span class="crap-label">Repetition:</span> Consistent typography, spacing, and layout patterns throughout. Feels cohesive.</li>
+                    <li><span class="crap-label">Alignment:</span> Elements align neatly in columns/rows; nothing floats randomly.</li>
+                    <li><span class="crap-label">Proximity:</span> Related items (heading, description, button) are grouped closely while different sections have good spacing.</li>
+                </ul>
+            </section>
+
+            <!-- BAD SITE REVIEW -->
+            <section class="site-review">
+                <h3>
+                    <a href="https://www.lingscars.com" target="_blank" rel="noopener">LINGsCARS (Chaotic Example)</a>
+                </h3>
+                <p>
+                    LINGsCARS is known for a loud, cluttered, and chaotic aesthetic. It overloads the user with conflicting visuals, making navigation and focus difficult.
+                </p>
+                <ul class="crap-list">
+                    <li><span class="crap-label">Contrast:</span> Colors clash and there’s inconsistent readability — loud backgrounds with bright text that competes rather than guides.</li>
+                    <li><span class="crap-label">Repetition:</span> Too many different fonts, sizes, and styles — no consistency from section to section.</li>
+                    <li><span class="crap-label">Alignment:</span> Elements are scattered, misaligned, and overlapping — hard to scan or predict layout flow.</li>
+                    <li><span class="crap-label">Proximity:</span> Unrelated content is crammed together, while related items can be far apart — creates confusion and visual chaos.</li>
+                </ul>
+            </section>
+
+        </main>
+
+        <footer>
+            <nav aria-label="Footer navigation">
+                <a href="#eval">Website Evaluations</a>
+            </nav>
+            <p>© 2025 Astute Axolotl — Steeped from the lakebed.</p>
+        </footer>
+    </div>
+</body>
+</html>
