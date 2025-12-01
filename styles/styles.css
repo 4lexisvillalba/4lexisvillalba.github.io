@@ -44,6 +44,35 @@ main {
     height: auto;
 }
 
+#json-section pre {
+    background-color: #f7f7f7;
+    color: #222;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    border: 1px solid #dddddd;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+#json-section code {
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    display: block;
+    max-width: 100%;
+}
+
+#json-section .hljs,
+#json-section .hljs * {
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
 header,
 main,
 footer {

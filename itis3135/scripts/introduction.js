@@ -22,6 +22,8 @@
     const clearButton = document.getElementById('clear-form');
     const addCourseButton = document.getElementById('add-course');
     const courseList = document.getElementById('course-list');
+    const jsonSection = document.getElementById('json-section');
+    const titleHeading = document.querySelector('.intro-form-title');
     const initialCourseMarkup = courseList ? courseList.innerHTML : '';
 
     // -----------------------------
@@ -116,10 +118,18 @@
         };
     }
 
-    function togglePreview(showPreview) {
-        if (!formWrapper || !previewSection) return;
-        formWrapper.hidden = !!showPreview;
-        previewSection.hidden = !showPreview;
+    function showFormView() {
+        if (formWrapper) formWrapper.hidden = false;
+        if (previewSection) previewSection.hidden = true;
+        if (jsonSection) jsonSection.hidden = true;
+        if (titleHeading) titleHeading.textContent = 'Introduction Form';
+    }
+
+    function showPreviewView() {
+        if (formWrapper) formWrapper.hidden = true;
+        if (previewSection) previewSection.hidden = false;
+        if (jsonSection) jsonSection.hidden = true;
+        if (titleHeading) titleHeading.textContent = 'Introduction HTML';
     }
 
     function renderPreview(data) {
@@ -268,13 +278,13 @@
         }
         const data = collectFormData(new FormData(form));
         renderPreview(data);
-        togglePreview(true);
+        showPreviewView();
     }
 
     function handleFormReset() {
         window.setTimeout(() => {
             restoreInitialCourses();
-            togglePreview(false);
+            showFormView();
         }, 0);
     }
 
@@ -307,8 +317,10 @@
         resetViewButton.addEventListener('click', () => {
             if (form) form.reset();
             restoreInitialCourses();
-            togglePreview(false);
+            showFormView();
         });
     }
-})();
 
+    // expose helpers for other scripts
+    window.showIntroductionForm = showFormView;
+})();

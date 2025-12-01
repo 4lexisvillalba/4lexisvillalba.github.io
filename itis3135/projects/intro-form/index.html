@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alexis Arenas-Villalba | ITIS 3135 | Introduction Form</title>
     <link rel="stylesheet" href="../../styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" integrity="sha512-3MWzME2YkdE+5EYXPLkZX31lrT7xvFeoJEB6Digw1VE3DybMT0SqnX+ANXoy2cuglRez2oJ6TP2PumoefRg2bg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Accumulus Validator -->
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
@@ -242,6 +243,7 @@
                         <button type="submit">Submit</button>
                         <button type="reset">Reset</button>
                         <button type="button" id="clear-form">Clear</button>
+                        <button type="button" id="generate-json">Generate JSON</button>
                     </div>
                 </form>
             </section>
@@ -251,6 +253,12 @@
                 <div id="preview-content"></div>
                 <button type="button" id="reset-view">Reset and Fill Again</button>
             </section>
+
+            <section id="json-section" class="preview-section" hidden>
+                <h3 class="input-section-heading">Generated JSON</h3>
+                <pre><code id="json-output" class="language-json"></code></pre>
+                <button type="button" id="reset-json-view">Reset and Fill Again</button>
+            </section>
             <hr class="section-divider section-divider-dark">
         </main>
 
@@ -259,6 +267,8 @@
 
     <script src="../../scripts/html-include.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/date-input-polyfill@2.1.0/dist/date-input-polyfill.dist.js" integrity="sha384-Y5HF4CshKF8uz1Cur+1ycQ40phQFr7n4evuW8bXtKZtt8W+U8zfKBDJa1c9YCXz9" crossorigin="anonymous"></script>
-    <script src="../../scripts/introduction.js" type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-kE5nQofCCRP4eAbOeXtfLOcAfeUOLuO/7dBDEuDfSU/EYEYVplpXCMVvjJAnCmvYzu3/n6PvJEa3TBUnIFVQmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../../scripts/introduction.js"></script>
+    <script src="../../scripts/generate_json.js"></script>
 </body>
 </html>
