@@ -5,6 +5,7 @@
     const formWrapper = document.getElementById('form-wrapper');
     const previewSection = document.getElementById('preview-section');
     const jsonSection = document.getElementById('json-section');
+    const htmlSection = document.getElementById('html-section');
     const jsonOutput = document.getElementById('json-output');
     const generateButton = document.getElementById('generate-json');
     const resetJsonButton = document.getElementById('reset-json-view');
@@ -84,6 +85,7 @@
         if (formWrapper) formWrapper.hidden = true;
         if (previewSection) previewSection.hidden = true;
         if (jsonSection) jsonSection.hidden = false;
+        if (htmlSection) htmlSection.hidden = true;
         if (titleHeading) titleHeading.textContent = 'Introduction JSON';
 
         if (jsonOutput) {
@@ -118,6 +120,7 @@
                 window.showIntroductionForm();
             } else {
                 if (jsonSection) jsonSection.hidden = true;
+                if (htmlSection) htmlSection.hidden = true;
                 if (formWrapper) formWrapper.hidden = false;
                 if (titleHeading) titleHeading.textContent = 'Introduction Form';
             }

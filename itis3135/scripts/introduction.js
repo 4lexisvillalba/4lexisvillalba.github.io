@@ -17,6 +17,7 @@
     const form = document.getElementById('introduction-form');
     const formWrapper = document.getElementById('form-wrapper');
     const previewSection = document.getElementById('preview-section');
+    const htmlSection = document.getElementById('html-section');
     const previewContent = document.getElementById('preview-content');
     const resetViewButton = document.getElementById('reset-view');
     const clearButton = document.getElementById('clear-form');
@@ -122,6 +123,7 @@
         if (formWrapper) formWrapper.hidden = false;
         if (previewSection) previewSection.hidden = true;
         if (jsonSection) jsonSection.hidden = true;
+        if (htmlSection) htmlSection.hidden = true;
         if (titleHeading) titleHeading.textContent = 'Introduction Form';
     }
 
@@ -129,6 +131,7 @@
         if (formWrapper) formWrapper.hidden = true;
         if (previewSection) previewSection.hidden = false;
         if (jsonSection) jsonSection.hidden = true;
+        if (htmlSection) htmlSection.hidden = true;
         if (titleHeading) titleHeading.textContent = 'Introduction HTML';
     }
 
@@ -323,4 +326,8 @@
 
     // expose helpers for other scripts
     window.showIntroductionForm = showFormView;
+    window.collectIntroductionFormData = function () {
+        if (!form) return null;
+        return collectFormData(new FormData(form));
+    };
 })();

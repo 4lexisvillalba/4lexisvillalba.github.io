@@ -180,9 +180,23 @@ table {
 .links-stack {
     display: flex;
     flex-wrap: wrap;
-    row-gap: 1rem;
+    row-gap: 0.75rem;
     column-gap: 1rem;
-    justify-content: flex-start;
+    justify-content: center;
+}
+
+.links-stack .link-fields {
+    border: 1px solid #e0e0e0;
+    padding: 0.5rem;
+    border-radius: 6px;
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.4rem;
+
+    width: calc((100% - 2rem) / 3);
+    max-width: 300px;
 }
 
 .full-width {
@@ -204,34 +218,6 @@ table {
     border: 1px solid #c5c5c5;
     border-radius: 4px;
     font-family: inherit;
-}
-
-/* ------------------------ */
-/* LINKS SECTION (UPDATED)  */
-/* ------------------------ */
-
-.links-stack {
-    display: flex;
-    flex-wrap: nowrap;       /* force one row on large screens */
-    column-gap: 1rem;
-    row-gap: 1rem;
-    justify-content: flex-start;
-}
-
-.links-stack .link-fields {
-    border: 1px solid #e0e0e0;
-    padding: 0.75rem;
-    border-radius: 6px;
-    background-color: #fff;
-
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.5rem;
-
-    /* fixed-ish width so cards don't stretch with container */
-    flex: 0 0 190px;
-    max-width: 190px;
-    min-width: 170px;
 }
 
 .links-stack .link-fields label {
@@ -313,9 +299,14 @@ table {
     color: #0b3d2e;
 }
 
-.form-actions #generate-json {
+.form-actions #generate-json,
+.form-actions #generate-html {
     background-color: #0b3d2e;
     color: #fff;
+}
+
+.form-actions #generate-json {
+    margin-left: auto;
 }
 
 /* ------------------------ */
@@ -340,13 +331,13 @@ table {
 }
 
 /* JSON section wrapper */
-#json-section {
+.code-output {
     max-width: 100%;
     box-sizing: border-box;
 }
 
-/* JSON container (pre) */
-#json-section pre {
+/* Code containers */
+.code-output pre {
     background-color: #f7f7f7;
     color: #222;
     padding: 1rem 1.25rem;
@@ -364,7 +355,7 @@ table {
 }
 
 /* code element inside pre */
-#json-section code {
+.code-output code {
     white-space: pre-wrap;
     word-break: break-word;
     overflow-wrap: anywhere;
@@ -373,8 +364,8 @@ table {
 }
 
 /* override highlight.js inside json section */
-#json-section .hljs,
-#json-section .hljs * {
+.code-output .hljs,
+.code-output .hljs * {
     white-space: pre-wrap;
     word-break: break-word;
     overflow-wrap: anywhere;
@@ -418,7 +409,7 @@ table {
     }
 
     .links-stack .link-fields {
-        flex: 1 1 45%;   /* 2 cards per row on tablets */
+        width: calc((100% - 0.5rem) / 2);
         max-width: none;
     }
 }
