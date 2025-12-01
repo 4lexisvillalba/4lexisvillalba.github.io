@@ -130,3 +130,14 @@ a:focus {
 a:active {
     color: black;
 }
+
+.cirriculum-outline {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    text-align: center;
+}
+
+table {
+    margin: 0 auto;
+}
