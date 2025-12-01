@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Astute Axolotl | Regulative Tea</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+        :root {
+            --ink: #0a0908;
+            --charcoal: #22333b;
+            --bone: #eae0d5;
+            --sand: #c6ac8f;
+            --ember: #5e503f;
+            --accent: #f3d6bf;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--bone);
+            background: linear-gradient(90deg, var(--ink) 0%, var(--charcoal) 100%);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .page {
+            width: min(1200px, 92%);
+            margin: 0 auto;
+            padding: 3rem 0 4rem;
+        }
+
+        /* ---------- HEADER ---------- */
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 1.5rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+        }
+        
+        .brand p {
+            margin-top: -20px;
+            color: var(--sand);
+        }
+
+        nav a {
+            color: var(--accent);
+            text-decoration: none;
+            margin-left: 1.25rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* ---------- INTRO SECTION ---------- */
+
+        .intro {
+            height: 80vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .intro-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            margin-bottom: 0.5rem;
+        }
+
+        .intro p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* ---------- CONTENT BELOW INTRO ---------- */
+
+        main p {
+            max-width: 70ch;
+            margin: 0 auto 1.4rem;
+            text-align: center;
+        }
+
+        .innovation-list {
+            list-style: none;
+            padding: 15px;
+            margin: 0 auto 2rem;
+            max-width: 780px;
+            text-align: center;
+        }
+
+        .innovation-list li {
+            position: relative;
+            margin-bottom: 1.4rem;
+            padding-top: 1.4rem;
+        }
+
+        .innovation-list li::before {
+            content: "⨳";
+            color: var(--accent);
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+        }
+
+        /* ---------- HERO IMAGE (centered) ---------- */
+
+        .hero {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 3rem 0;
+        }
+
+        .photo-panel {
+            max-width: 900px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(10, 9, 8, 0.5);
+            padding: 0;
+        }
+
+        .photo-panel img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            filter: grayscale(0.15) contrast(1.15);
+        }
+
+        /* ---------- PROJECT INQUIRY ---------- */
+
+        .project-inquiry {
+            margin: 2.5rem auto;
+            max-width: 68ch;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 1.4rem;
+            background: rgba(34, 51, 59, 0.35);
+            text-align: center;
+        }
+
+        /* ---------- FOOTER ---------- */
+
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            color: var(--sand);
+        }
+
+        footer nav a {
+            color: var(--accent);
+            margin: 0 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <!-- Accumulus Validator -->
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="page">
+
+        <header>
+            <div class="brand">
+                <div>
+                    <h1>Astute Axolotl</h1>
+                    <p class="tagline"><em>Regulative teas for slow, glowing days.</em></p>
+                </div>
+            </div>
+
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+            </nav>
+        </header>
+
+        <main>
+            <!-- HERO INTRO -->
+            <div class="intro">
+                <h2 class="intro-title">ASTUTE AXOLOTL TEA</h2>
+                <p>Axolotl-inspired blends for calmer rhythms and brighter moods.</p>
+            </div>
+
+            <!-- CONTENT BELOW INTRO -->
+            <section id="services">
+                <h2>Regulative Tea Blends</h2>
+                <p>
+                    Astute Axolotl crafts small-batch regulative teas designed to help your body and mind find their
+                    natural pace again. Each blend is inspired by the axolotl’s steady, restorative nature—gentle,
+                    resilient, and a little bit luminous.
+                </p>
+                <p>
+                    We pair organic leaves, florals, and botanicals with carefully tuned flavor profiles:
+                    nothing harsh, nothing rushed—just slow-steeping comfort brewed for nervous system softening,
+                    gut balance, and end-of-day unwinding.
+                </p>
+
+                <ul class="innovation-list">
+                    <li><strong>Lakebed Lavender Chai</strong> — grounding spices with lavender to ease evening spirals.</li>
+                    <li><strong>Glow Mint Citrus</strong> — bright mint and citrus peel to regulate focus without the jitters.</li>
+                    <li><strong>Regenera Rose Oolong</strong> — floral, slightly creamy, brewed for calm digestion.</li>
+                    <li><strong>Deep Drift Chamomile</strong> — chamomile, skullcap, and lemon balm for soft sleep landings.</li>
+                    <li><strong>Brine & Bloom Green</strong> — coastal mineral notes and green tea for daytime clarity.</li>
+                    <li><strong>Club Night Decaf Noir</strong> — smoky, caffeine-free blend for late conversations and slow playlists.</li>
+                </ul>
+            </section>
+
+            <!-- CENTERED IMAGE SECTION -->
+            <section class="hero" aria-label="Axolotl tea ritual">
+                <figure class="photo-panel">
+                    <img src="images/axolotl.avif" alt="Axolotl illustration beside a cup of tea">
+                </figure>
+            </section>
+
+            <section class="project-inquiry">
+                <h3>Wholesale & Event Rituals</h3>
+                <p>
+                    Hosting a mindful market, gallery opening, or late-night study lounge?
+                    Share your theme, headcount, and timing. We’ll suggest a trio of blends,
+                    brewing instructions, and simple ceremony cues so your guests can sip,
+                    regulate, and linger a little longer.
+                </p>
+            </section>
+
+        </main>
+
+        <footer>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+            </nav>
+            <p>© 2025 Astute Axolotl — Steeped from the lakebed.</p>
+        </footer>
+
+    </div>
+</body>
+</html>

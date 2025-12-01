@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Astute Axolotl | About</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+        :root {
+            --ink: #0a0908;
+            --charcoal: #22333b;
+            --bone: #eae0d5;
+            --sand: #c6ac8f;
+            --ember: #5e503f;
+            --accent: #f3d6bf;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--bone);
+            background: linear-gradient(90deg, var(--ink) 0%, var(--charcoal) 100%);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .page {
+            width: min(1200px, 92%);
+            margin: 0 auto;
+            padding: 3rem 0 4rem;
+        }
+
+        /* ---------- HEADER  ---------- */
+
+       header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 1.5rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+        }
+        
+        .brand p {
+            margin-top: -20px;
+            color: var(--sand);
+        }
+
+        nav a {
+            color: var(--accent);
+            text-decoration: none;
+            margin-left: 1.25rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* ---------- MAIN CONTENT ---------- */
+
+        h2 {
+            font-size: 1.6rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            text-align: left;
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        main p {
+            max-width: 70ch;
+            margin: 0 auto 1.4rem;
+        }
+
+        .story {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0 2rem;
+        }   
+
+        .story-card {
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 1.2rem;
+            background: rgba(10, 9, 8, 0.7);
+        }
+
+        .team-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .team-list li {
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 1rem;
+            background: rgba(34, 51, 59, 0.35);
+        }
+
+        .contact-card {
+            margin: 2.5rem auto 0;
+            max-width: 520px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 1.4rem;
+            background: rgba(10, 9, 8, 0.8);
+        }
+
+        .contact-title {
+            margin-top: 0;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .contact-card a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* ---------- FOOTER ---------- */
+
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            color: var(--sand);
+        }
+
+        footer nav a {
+            color: var(--accent);
+            text-decoration: none;
+            margin: 0 0.5rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        footer nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <!-- Accumulus Validator -->
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div class="brand">
+                <div>
+                    <h1>Astute Axolotl</h1>
+                    <p class="tagline"><em>Regulative teas for slow, glowing days.</em></p>
+                </div>
+            </div>
+            <nav aria-label="Mascot navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+            </nav>
+        </header>
+
+        <main>
+            <section>
+                <h2>Astute Axolotl Tea</h2>
+                <div class="story">
+                    <article class="story-card">
+                        <h3>Lakefront Beginnings</h3>
+                        <p>
+                            Astute Axolotl started as a late-night ritual: brewing calming pots of tea
+                            between lab reports and sketchbooks. The axolotl—calm, regenerative, a little odd—
+                            became our guide for building blends that invite you to slow down without shutting off.
+                        </p>
+                    </article>
+                    <article class="story-card">
+                        <h3>From Pop-ups to Care Packages</h3>
+                        <p>
+                            We began sharing jars with friends, then at tiny pop-up tea bars in galleries and
+                            community studios. Each tin shipped with handwritten steep times, tasting notes,
+                            and a reminder that regulation doesn’t have to be clinical—it can be cozy.
+                        </p>
+                    </article>
+                    <article class="story-card">
+                        <h3>Still Small-Batch</h3>
+                        <p>
+                            Today, our blends are small-batch, transparently sourced, and tuned for different
+                            rhythms: pre-meeting clarity, post-social decompression, Sunday-reset steeping.
+                            Every bag still feels like a care package from the lakebed.
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <section>
+                <h2>The Tea Collective</h2>
+                <ul class="team-list">
+                    <li>
+                        <strong>Alma Rivera</strong><br>
+                        Blend composer pairing botanicals for mood and mouthfeel.
+                    </li>
+                    <li>
+                        <strong>Sora Kim</strong><br>
+                        Herb and safety lead, making sure every cup stays gentle and balanced.
+                    </li>
+                    <li>
+                        <strong>Nikhil Sharma</strong><br>
+                        Ritual designer, writing brew rituals and slow prompts for each flavor.
+                    </li>
+                    <li>
+                        <strong>Mara Lin</strong><br>
+                        Logistics and events—sets up tea stations that stay calm, even on busy nights.
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Why Axolotl Tea?</h2>
+                <p>
+                    Axolotls regenerate at their own steady pace. That same patience is baked into our regulative teas:
+                    we lean into slow steeps, layered flavors, and ingredients that support the body instead of fighting it.
+                    Dark, matte packaging; soft glows; and lake-night palettes all echo the feeling of resting underwater,
+                    just breathing, just being.
+                </p>
+            </section>
+
+            <section class="contact-card" id="contact">
+                <h3 class="contact-title">Stockists & Collaborations</h3>
+                <p>Email: <a href="mailto:aarenasv@charlotte.edu">aarenasv@charlotte.edu</a></p>
+                <p>Phone: (704) 645-1991</p>
+                <p>
+                    Interested in carrying Astute Axolotl tea or hosting a regulative tea ritual
+                    at your space? Send your concept, dates, and estimated guests—let’s brew something soft together.
+                </p>
+            </section>
+        </main>
+
+        <footer>
+            <nav aria-label="Footer navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+            </nav>
+            <p>© 2025 Astute Axolotl — Steeped from the lakebed.</p>
+        </footer>
+    </div>
+</body>
+</html>
