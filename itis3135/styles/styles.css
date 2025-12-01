@@ -18,14 +18,14 @@ header, main, footer {
 h1 {
     font-family: "Goudy Old Style", "Garamond", serif;
     color: #0b3d2e;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 15px;
 }
 
 h2 {
     font-family: "Goudy Old Style", "Garamond", serif;
     color: #0b3d2e;
-    margin-top: 10px;
+    margin-top: -5px;
 }
 
 h3 {
@@ -42,6 +42,10 @@ p, .facts li {
 .header-nav {
     text-align: center;
     font-size: 0.9rem;
+}
+
+.header-nav .secondary-nav {
+    margin-top: 8px;
 }
 
 .CCI-logo {
