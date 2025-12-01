@@ -11,6 +11,12 @@ body {
     margin: 0 auto;
 }
 
+main {
+    width: 95%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
 header, main, footer {
     padding: 15px 10px;
 }
@@ -140,4 +146,52 @@ a:active {
 
 table {
     margin: 0 auto;
+}
+
+/* Responsive layout: large desktops retain the base rules */
+@media (max-width: 1100px) {
+    .page-wrapper {
+        width: 94%;
+    }
+
+    header nav a,
+    footer nav a {
+        display: inline-block;
+        margin: 0.15rem 0.35rem;
+    }
+}
+
+/* Tablet adjustments */
+@media (max-width: 900px) {
+    .header-nav nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.35rem;
+    }
+
+    main {
+        width: 96%;
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 560px) {
+    .header-nav nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .separator {
+        display: none;
+    }
+
+    header, main, footer {
+        padding: 1rem 0.65rem;
+    }
+
+    .page-wrapper,
+    main {
+        width: 98%;
+    }
 }

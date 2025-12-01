@@ -45,6 +45,11 @@
             padding: 3rem 0 4rem;
         }
 
+        main {
+            width: min(95%, 72ch);
+            margin: 0 auto;
+        }
+
         /* ---------- HEADER ---------- */
 
        header {
@@ -161,7 +166,64 @@
             text-decoration: underline;
         }
 
+        /* ---------- Responsive Layout ---------- */
+
+        @media (max-width: 1000px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 0.25rem 0.5rem;
+            }
+
+            main {
+                width: 96%;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .page {
+                width: 95%;
+            }
+
+            main {
+                width: 98%;
+            }
+
+            footer nav a {
+                display: inline-block;
+                margin: 0.2rem 0.35rem;
+            }
+        }
+
+        @media (max-width: 520px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .brand {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.15rem 0;
+            }
+
+            .page {
+                width: 98%;
+            }
+        }
+
     </style>
+
+    <!-- Accumulus Validator -->
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="page">
