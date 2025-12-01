@@ -47,15 +47,51 @@
             margin: 0 auto;
         }
 
+        .top-nav {
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            z-index: 2;
+            font-size: 0.95rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .top-nav a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .top-nav a:hover {
+            text-decoration: underline;
+        }
+
         header {
             margin-bottom: 2rem;
+        }
+
+        .hero-header {
+            min-height: 95vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 1rem;
+            margin: 0;
+        }
+
+        .hero-header header {
+            margin-bottom: 0;
+            width: 100%;
         }
 
         .brand-header {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 1rem;
+            gap: 1.5rem;
             text-align: left;
         }
 
@@ -65,10 +101,10 @@
             box-shadow: 0 15px 25px rgba(0, 0, 0, 0.35);
         }
 
-        h1 {
+        .brand-title {
             font-family: sans-serif;
-            font-size: clamp(2.1rem, 3.8vw, 2.8rem);
-            letter-spacing: 0.08em;
+            font-size: clamp(3rem, 5.5vw, 4.2rem);
+            letter-spacing: 0.14em;
             margin: 0;
         }
 
@@ -94,7 +130,7 @@
             text-align: center;
         }
 
-        h2 {
+        .section-title {
             font-family: sans-serif;
             font-size: 1.8rem;
             margin-bottom: 1rem;
@@ -217,11 +253,11 @@
         }
 
         @media (max-width: 480px) {
-            h1 {
+            .brand-title {
                 font-size: 1.8rem;
             }
 
-            h2 {
+            .section-title {
                 font-size: 1.3rem;
             }
 
@@ -234,22 +270,26 @@
 </head>
 <body>
     <div class="page">
-        <header>
-            <div class="brand-header">
-                <img src="./images/logo.jpeg" alt="AlexEnterprises Tech crest" width="150" height="114">
-                <div class="brand-copy">
-                    <h1>AlexEnterprises Tech</h1>
-                    <p>Security-led strategy, design-led execution.</p>
+        <nav class="top-nav" aria-label="Primary shortcuts">
+            <a href="#home">Home</a>
+            <a href="#contact-section">Contact</a>
+        </nav>
+
+        <section class="hero-header" id="home">
+            <header>
+                <div class="brand-header">
+                    <img src="./images/logo.jpeg" alt="AlexEnterprises Tech crest" width="150" height="114">
+                    <div class="brand-copy">
+                        <h1 class="brand-title">AlexEnterprises Tech</h1>
+                        <p>Security-led strategy, design-led execution.</p>
+                    </div>
                 </div>
-            </div>
-        </header>
-
-
-        <hr class="divider">
+            </header>
+        </section>
 
         <main>
             <section id="services">
-                <h2>AlexEnterprises Tech Services</h2>
+                <h2 class="section-title">AlexEnterprises Tech Services</h2>
                 <p>
                     AlexEnterprises Tech partners with organizations that expect their digital presence to feel premium
                     and perform safely. We blend interface craft with secure development practices so every release is fast,
@@ -257,7 +297,7 @@
                 </p>
             </section>
 
-            <section aria-label="Service summary">
+        <section aria-label="Service summary">
                 <ul class="services">
                     <li class="service-card">Embedded security audits and threat modeling prior to each sprint.</li>
                     <li class="service-card">Reusable design systems that translate brand voice into WCAG-compliant UI.</li>
@@ -268,7 +308,7 @@
                 </ul>
             </section>
 
-            <section class="project-inquiry">
+        <section class="project-inquiry" id="contact-section">
                 <h3>Project Inquiry</h3>
                 <p>
                     If you’re planning a product reveal, a high-stakes investor demo, or a thoughtful redesign that bridges

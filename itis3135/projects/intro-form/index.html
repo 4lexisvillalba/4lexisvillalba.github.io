@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexis Arenas-Villalba | ITIS 3135 | Introduction Form</title>
+    <link rel="stylesheet" href="../../styles/styles.css">
+
+    <!-- Accumulus Validator -->
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div data-include="../../components/header.html"></div>
+
+        <main>
+            <h2 class="intro-form-title">Introduction Form</h2>
+            <section id="form-wrapper" class="form-wrapper">
+                <h3>Please submit the form below.</h3>
+                <form id="introduction-form">
+                    <section class="input-section">
+                        <h4 class="input-section-heading">Identity</h4>
+                        <div class="form-stack">
+                            <label>First Name
+                                <input type="text" name="firstName" value="Alexis" placeholder="First name" required>
+                            </label>
+                            <label>Middle Name / Initial
+                                <input type="text" name="middleName" value="E." placeholder="Middle name or initial">
+                            </label>
+                            <label>Nickname / Preferred Name
+                                <input type="text" name="nickname" value="Lex" placeholder="Nickname">
+                            </label>
+                            <label>Last Name
+                                <input type="text" name="lastName" value="Arenas-Villalba" placeholder="Last name" required>
+                            </label>
+                        </div>
+                    </section>
+
+                    <section class="input-section">
+                        <h4 class="input-section-heading">Mascot &amp; Acknowledgment</h4>
+                        <div class="form-stack">
+                            <label>Acknowledgment Statement
+                                <input type="text" name="ackStatement" value="I acknowledge that this introduction accurately reflects me." placeholder="Statement" required>
+                            </label>
+                            <label>Acknowledgment Date
+                                <input type="text" name="ackDate" value="2024-09-05" placeholder="YYYY-MM-DD" pattern="\d{4}-\d{2}-\d{2}" required>
+                            </label>
+                            <label>Mascot Adjective
+                                <input type="text" name="mascotAdj" value="Astute" placeholder="Adjective" required>
+                            </label>
+                            <label>Mascot Animal
+                                <input type="text" name="mascotAnimal" value="Axolotl" placeholder="Animal" required>
+                            </label>
+                            <label>Divider Symbol
+                                <input type="text" name="divider" value="~" maxlength="3" placeholder="Divider" required>
+                            </label>
+                        </div>
+                    </section>
+
+                    <section class="input-section">
+                        <h4 class="input-section-heading">Photo</h4>
+                        <div class="form-stack">
+                            <label>Picture URL
+                                <input type="url" name="photoUrl" value="https://webpages.charlotte.edu/aarenasv/itis3135/images/young-alexis.jpeg" placeholder="https://example.com/photo.jpg" required>
+                            </label>
+                            <label>Photo Alt Text
+                                <input type="text" name="photoAlt" value="Picture of Alexis after the Cybersecurity Symposium" placeholder="Describe the photo" required>
+                            </label>
+                            <label>Picture Caption
+                                <input type="text" name="photoCaption" value="Pre-k Graduation with Ms. Clarke." placeholder="Caption" required>
+                            </label>
+                        </div>
+                    </section>
+
+                    <section class="input-section">
+                        <h4 class="input-section-heading">Personal Statement</h4>
+                        <label class="full-width">Intro Paragraph
+                            <textarea name="personalStatement" rows="4" required placeholder="Tell us about yourself.">Hey, my name is Alexis. I'm currently in my third year here at UNC Charlotte majoring in Computer Science with a focus in Cybersecurity and a minor in Bioinformatics and Mathematics. Love thrifting and hanging with family and friends, also love gaming–into Marvel Rivals at the moment.</textarea>
+                        </label>
+                    </section>
+
+                    <section class="input-section">
+                        <h4 class="input-section-heading">About Me Bullets</h4>
+                        <div class="form-stack">
+                            <label>Personal Background
+                                <textarea name="personalBackground" rows="3" required>I was born and raised in Charlotte, North Carolina. As a first-gen student, I’m really determined with my studies and love learning new things. I speak English, Spanish, and a little French.</textarea>
+                            </label>
+                            <label>Professional Background
+                                <textarea name="professionalBackground" rows="3" required>Worked as a Senior Operations Director at Chick-fil-A for 3 years and currently serve as an associate at The Home Depot.</textarea>
+                            </label>
+                            <label>Academic Background
+                                <textarea name="academicBackground" rows="3" required>Third-year junior pursuing Computer Science (Cybersecurity concentration) with minors in Bioinformatics and Mathematics.</textarea>
+                            </label>
+                            <label>Career Interests
+                                <textarea name="careerInterests" rows="3" required>Focused on cybersecurity research, secure systems design, and accessible front-end engineering roles.</textarea>
+                            </label>
+                            <label>Technical Interests
+                                <textarea name="technicalInterests" rows="3" required>Enjoy prototyping secure web apps, experimenting with threat modeling, and automating tedious workflows.</textarea>
+                            </label>
+                            <label>Hobbies &amp; Community
+                                <textarea name="hobbies" rows="3" required>Thrifting with friends, gaming sessions, and volunteering at Charlotte tech meetups when schedules allow.</textarea>
+                            </label>
+                            <label>Personal Highlight
+                                <textarea name="personalHighlight" rows="3" required>Guided my family through their first PC builds and became everyone’s go-to for tech troubleshooting.</textarea>
+                            </label>
+                        </div>
+                    </section>
+
+                    <section class="input-section">
+                        <h4 class="input-section-heading">Courses</h4>
+                        <p>List your current courses. Add or remove as needed.</p>
+                        <div id="course-list" class="course-list">
+                            <div class="course-fields" data-course>
+                                <label>Department
+                                    <input type="text" name="courseDept[]" value="BINF" placeholder="Course dept" required>
+                                </label>
+                                <label>Number
+                                    <input type="text" name="courseNumber[]" value="1101" placeholder="Course number" required>
+                                </label>
+                                <label>Course Name
+                                    <input type="text" name="courseName[]" value="Intro. Bioinformatics and Genomics" placeholder="Course name" required>
+                                </label>
+                                <label>Reason
+                                    <input type="text" name="courseReason[]" value="Builds my Bioinformatics foundation." placeholder="Why taking it" required>
+                                </label>
+                                <button type="button" class="remove-course" aria-label="Remove course">Remove</button>
+                            </div>
+                            <div class="course-fields" data-course>
+                                <label>Department
+                                    <input type="text" name="courseDept[]" value="ITIS" required>
+                                </label>
+                                <label>Number
+                                    <input type="text" name="courseNumber[]" value="3135" required>
+                                </label>
+                                <label>Course Name
+                                    <input type="text" name="courseName[]" value="Front End Web App Development" required>
+                                </label>
+                                <label>Reason
+                                    <input type="text" name="courseReason[]" value="Sharpen front-end craftsmanship." required>
+                                </label>
+                                <button type="button" class="remove-course" aria-label="Remove course">Remove</button>
+                            </div>
+                            <div class="course-fields" data-course>
+                                <label>Department
+                                    <input type="text" name="courseDept[]" value="ITIS" required>
+                                </label>
+                                <label>Number
+                                    <input type="text" name="courseNumber[]" value="3200" required>
+                                </label>
+                                <label>Course Name
+                                    <input type="text" name="courseName[]" value="Intro. Info Security and Privacy" required>
+                                </label>
+                                <label>Reason
+                                    <input type="text" name="courseReason[]" value="Aligns with my cybersecurity concentration." required>
+                                </label>
+                                <button type="button" class="remove-course" aria-label="Remove course">Remove</button>
+                            </div>
+                            <div class="course-fields" data-course>
+                                <label>Department
+                                    <input type="text" name="courseDept[]" value="ITSC" required>
+                                </label>
+                                <label>Number
+                                    <input type="text" name="courseNumber[]" value="3146" required>
+                                </label>
+                                <label>Course Name
+                                    <input type="text" name="courseName[]" value="Intro. Operating Systems &amp; Networking" required>
+                                </label>
+                                <label>Reason
+                                    <input type="text" name="courseReason[]" value="Strengthens my platform fundamentals." required>
+                                </label>
+                                <button type="button" class="remove-course" aria-label="Remove course">Remove</button>
+                            </div>
+                        </div>
+                        <button type="button" id="add-course" class="add-course">Add Course</button>
+                    </section>
+
+                    <section class="input-section">
+                        <h4 class="input-section-heading">Quote &amp; Extras</h4>
+                        <div class="form-stack">
+                            <label>Favorite Quote
+                                <textarea name="quote" rows="2" required>I never lose. I either win or learn.</textarea>
+                            </label>
+                            <label>Quote Author
+                                <input type="text" name="quoteAuthor" value="Nelson Mandela" required>
+                            </label>
+                            <label>Funny Thing (optional)
+                                <textarea name="funnyThing" rows="2" placeholder="Optional fun fact">I can identify thrift stores in Charlotte by smell alone.</textarea>
+                            </label>
+                            <label>Something I'd Like to Share (optional)
+                                <textarea name="shareThing" rows="2" placeholder="Optional share">Building a security-focused tea micro-site for a side project.</textarea>
+                            </label>
+                        </div>
+                    </section>
+
+                    <section class="input-section">
+                        <h4 class="input-section-heading">Links</h4>
+                        <div class="links-stack">
+                            <div class="link-fields">
+                                <label>Link Label
+                                    <input type="text" name="linkLabel[]" value="LinkedIn" required>
+                                </label>
+                                <label>Link URL
+                                    <input type="url" name="linkUrl[]" value="https://www.linkedin.com/in/alexis-arenas-villalba/" required>
+                                </label>
+                            </div>
+                            <div class="link-fields">
+                                <label>Link Label
+                                    <input type="text" name="linkLabel[]" value="GitHub" required>
+                                </label>
+                                <label>Link URL
+                                    <input type="url" name="linkUrl[]" value="https://github.com/4lexisvillalba" required>
+                                </label>
+                            </div>
+                            <div class="link-fields">
+                                <label>Link Label
+                                    <input type="text" name="linkLabel[]" value="CLT Web" required>
+                                </label>
+                                <label>Link URL
+                                    <input type="url" name="linkUrl[]" value="http://webpages.charlotte.edu/aarenasv/" required>
+                                </label>
+                            </div>
+                            <div class="link-fields">
+                                <label>Link Label
+                                    <input type="text" name="linkLabel[]" value="GitHub Pages" required>
+                                </label>
+                                <label>Link URL
+                                    <input type="url" name="linkUrl[]" value="https://4lexisvillalba.github.io/" required>
+                                </label>
+                            </div>
+                            <div class="link-fields">
+                                <label>Link Label
+                                    <input type="text" name="linkLabel[]" value="Portfolio Draft" required>
+                                </label>
+                                <label>Link URL
+                                    <input type="url" name="linkUrl[]" value="https://4lexisvillalba.github.io/itis3135/projects/astuteaxolotl-tea/" required>
+                                </label>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="form-actions">
+                        <button type="submit">Submit</button>
+                        <button type="reset">Reset</button>
+                        <button type="button" id="clear-form">Clear</button>
+                    </div>
+                </form>
+            </section>
+
+            <section id="preview-section" class="preview-section" hidden>
+                <h3 class="input-section-heading">Generated Introduction</h3>
+                <div id="preview-content"></div>
+                <button type="button" id="reset-view">Reset and Fill Again</button>
+            </section>
+            <hr class="section-divider section-divider-dark">
+        </main>
+
+        <div data-include="../../components/footer.html"></div>
+    </div>
+
+    <script src="../../scripts/html-include.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-input-polyfill@2.1.0/dist/date-input-polyfill.dist.js" integrity="sha384-Y5HF4CshKF8uz1Cur+1ycQ40phQFr7n4evuW8bXtKZtt8W+U8zfKBDJa1c9YCXz9" crossorigin="anonymous"></script>
+    <script src="../../scripts/introduction.js" type="module"></script>
+</body>
+</html>

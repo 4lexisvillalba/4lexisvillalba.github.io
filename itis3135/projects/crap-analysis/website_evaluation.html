@@ -45,9 +45,40 @@
             padding: 3rem 0 4rem;
         }
 
+        .hero-intro {
+            height: 80vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .hero-intro-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin: 0 0 1rem;
+            color: #0b121a;
+            text-align: center;
+            width: 100%;
+            margin-top: -130px;
+        }
+
+        .hero-intro p {
+            max-width: 40ch;
+            font-size: 1.2rem;
+            margin: 0;
+            color: #111a23;
+        }
+
         main {
-            width: min(95%, 72ch);
+            width: min(95%, 90ch);
             margin: 0 auto;
+            padding-top: 3rem;
         }
 
         /* ---------- HEADER ---------- */
@@ -238,6 +269,11 @@
                 <a href="./website_evaluation.html">Website Evaluations</a>
             </nav>
         </header>
+
+        <section class="hero-intro">
+            <h2 class="hero-intro-title">CRAP Website Explanation</h2>
+            <p>Evaluating contrast, repetition, alignment, and proximity to understand what works—and what fails.</p>
+        </section>
 
         <main>
             <h2 id="eval" class="brand-header">Website Evaluations</h2>

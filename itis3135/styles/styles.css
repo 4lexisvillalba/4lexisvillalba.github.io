@@ -6,14 +6,14 @@ body {
 }
 
 .page-wrapper {
-    max-width: 1000px;
-    width: 90%;
+    max-width: 1400px;   /* wider page */
+    width: 95%;
     margin: 0 auto;
 }
 
 main {
     width: 95%;
-    max-width: 1100px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
@@ -69,6 +69,7 @@ p, .facts li {
     line-height: 1.6;
     color: #0b3d2e;
 }
+
 .alexis-photo img {
     display: block;
     margin: 0 auto;
@@ -89,7 +90,6 @@ p, .facts li {
 
 .section-divider-dark {
     border-top-color: #0b3d2e;
-    margin-top: 2rem;
 }
 
 footer {
@@ -148,7 +148,195 @@ table {
     margin: 0 auto;
 }
 
-/* Responsive layout: large desktops retain the base rules */
+.intro-form-title {
+    text-align: center;
+}
+
+/* ------------------------ */
+/* FORM CONTAINER           */
+/* ------------------------ */
+
+.form-wrapper {
+    background-color: #f7f7f7;
+    border: 1px solid #dddddd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    width: auto;
+}
+
+.input-section + .input-section {
+    margin-top: 1.5rem;
+}
+
+.input-section-heading {
+    margin-bottom: 0.5rem;
+    font-family: "Goudy Old Style", "Garamond", serif;
+    color: #0b3d2e;
+}
+
+.form-stack,
+.links-stack {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    column-gap: 1rem;
+    justify-content: flex-start;
+}
+
+.full-width {
+    display: block;
+}
+
+.input-section label {
+    font-size: 0.95rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.3rem;
+    flex: 1 1 220px;
+}
+
+.input-section input,
+.input-section textarea,
+.input-section select {
+    padding: 0.4rem 0.5rem;
+    border: 1px solid #c5c5c5;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+/* ------------------------ */
+/* LINKS SECTION (UPDATED)  */
+/* ------------------------ */
+
+.links-stack {
+    display: flex;
+    flex-wrap: nowrap;       /* force one row on large screens */
+    column-gap: 1rem;
+    row-gap: 1rem;
+    justify-content: flex-start;
+}
+
+.links-stack .link-fields {
+    border: 1px solid #e0e0e0;
+    padding: 0.75rem;
+    border-radius: 6px;
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+
+    /* FIXED WIDTH so cards don't stretch with container */
+    flex: 0 0 190px;
+    max-width: 130px;
+    min-width: 40px auto;
+}
+
+.links-stack .link-fields label {
+    flex: 0 0 auto;   /* prevent stretching */
+}
+
+/* ------------------------ */
+/* COURSE SECTION           */
+/* ------------------------ */
+
+.course-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.course-fields {
+    border: 1px solid #e0e0e0;
+    padding: 0.75rem;
+    border-radius: 6px;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 0.75rem;
+    column-gap: 0.75rem;
+    position: relative;
+}
+
+.course-fields label {
+    flex: 1 1 180px;
+}
+
+.course-fields .remove-course {
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    background: transparent;
+    border: none;
+    color: #8b0000;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.add-course {
+    margin-top: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid #0b3d2e;
+    background: #0b3d2e;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* ------------------------ */
+/* FORM ACTION BUTTONS      */
+/* ------------------------ */
+
+.form-actions {
+    display: flex;
+    row-gap: 0.75rem;
+    column-gap: 0.75rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.form-actions button {
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    border: 1px solid #0b3d2e;
+    background-color: #0b3d2e;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.form-actions button[type="reset"],
+.form-actions #clear-form {
+    background-color: #fff;
+    color: #0b3d2e;
+}
+
+/* ------------------------ */
+/* PREVIEW SECTION          */
+/* ------------------------ */
+
+.preview-section {
+    border: 1px solid #dddddd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.preview-section #reset-view {
+    margin-top: 1rem;
+    padding: 0.45rem 1rem;
+    border: 1px solid #0b3d2e;
+    background: #fff;
+    color: #0b3d2e;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* ------------------------ */
+/* RESPONSIVE BEHAVIOR      */
+/* ------------------------ */
+
 @media (max-width: 1100px) {
     .page-wrapper {
         width: 94%;
@@ -161,7 +349,6 @@ table {
     }
 }
 
-/* Tablet adjustments */
 @media (max-width: 900px) {
     .header-nav nav {
         display: flex;
@@ -175,7 +362,18 @@ table {
     }
 }
 
-/* Mobile adjustments */
+@media (max-width: 700px) {
+    .links-stack {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .links-stack .link-fields {
+        flex: 1 1 45%;   /* 2 cards per row on tablets */
+        max-width: none;
+    }
+}
+
 @media (max-width: 560px) {
     .header-nav nav {
         flex-direction: column;
@@ -193,5 +391,9 @@ table {
     .page-wrapper,
     main {
         width: 98%;
+    }
+
+    .links-stack .link-fields {
+        flex: 1 1 100%;  /* stack on phones */
     }
 }
