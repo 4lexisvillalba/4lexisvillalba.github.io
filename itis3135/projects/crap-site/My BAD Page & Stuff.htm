@@ -8,6 +8,12 @@
 
     <style>
         /* yes, we ALSO use internal styles even though we have a linked CSS file */
+        a.footer-link:link,
+        a.footer-link:visited,
+        a.footer-link:active,
+        a.footer-link:hover {
+            color: #0b3d2e;
+        }
     </style>
 </head>
 
@@ -69,5 +75,14 @@
     <p style="text-align:center; font-family:'Comic Sans MS', cursive;">
         more centered text that should never be centered but here we are.
     </p>
+
+    <footer style="text-align:center; margin-top:60px; border-top:8px dotted black; padding-top:20px;">
+        <p style="font-family:'Comic Sans MS', cursive; font-size:24px;">
+            Page built by
+            <a href="../alexEnterprises.tech/index.html" class="footer-link" style="font-weight:bold; text-decoration:none;">
+                AlexEnterprises Tech
+            </a>.
+        </p>
+    </footer>
 </body>
 </html>
