@@ -12,6 +12,17 @@
     box-sizing: border-box;
 }
 
+@keyframes fadeUpSoft {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -71,12 +82,14 @@ body {
     font-weight: 500;
     padding: 0.35rem 0.75rem;
     border-radius: 999px;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
 .component-header nav .nav-link:hover,
 .component-header nav .nav-link:focus {
     background: rgba(235, 94, 40, 0.15);
     color: var(--accent);
+    transform: translateY(-2px);
 }
 
 .site-wrapper {
@@ -119,6 +132,7 @@ main {
     background: transparent;
     box-shadow: none;
     margin-top: 0;
+    animation: fadeUpSoft 0.9s ease both;
 }
 
 .kicker {
@@ -141,6 +155,8 @@ section {
     padding: 2rem;
     margin-top: 2rem;
     box-shadow: 0 18px 35px rgba(0, 0, 0, 0.05);
+    animation: fadeUpSoft 0.9s ease both;
+    animation-delay: 0.1s;
 }
 
 .section-heading {
@@ -184,6 +200,7 @@ section {
     font-weight: 600;
     cursor: pointer;
     color: var(--ink);
+    transition: color 0.3s ease;
 }
 
 .accordion p {
@@ -211,6 +228,12 @@ section {
     text-align: left;
     flex: 1 1 240px;
     max-width: 320px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.08);
 }
 
 .team-name {
@@ -262,13 +285,16 @@ section {
     text-decoration: none;
     color: var(--ink);
     background: #fff;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .action-card:hover,
 .action-card:focus {
     transform: translateY(-4px);
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
 }
 
 .action-label {
@@ -284,18 +310,15 @@ section {
     font-size: 0.95rem;
 }
 
-.action-primary {
-    background: var(--accent);
+.action-card:hover .action-copy,
+.action-card:focus .action-copy {
     color: #fff;
-    border-color: var(--accent);
 }
 
-.action-primary .action-copy {
-    color: #fff;
-}
+/* Remove special base style so all cards share the same default */
 footer {
     background: #fff;
-    padding: 1.5rem 0;
+    padding: 0.75rem 0;
     color: var(--charcoal);
     text-align: center;
 }

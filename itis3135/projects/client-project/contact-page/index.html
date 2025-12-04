@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact &amp; Request a Quote | T&amp;O Construction</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="assets/css/contact.css">
     <script src="../../../scripts/html-include.js" defer></script>
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
@@ -80,11 +81,14 @@
                         </label>
                     </div>
 
-                    <label>
-                        Project Description* (minimum 40 characters)
+                    <div class="field-group">
+                        <label for="details">
+                            Project Description* (minimum 40 characters)
+                        </label>
                         <textarea name="details" id="details" rows="5" required></textarea>
                         <span class="error" id="details-error" aria-live="polite"></span>
-                    </label>
+                        <p id="details-count" class="field-hint">0 / 40 characters</p>
+                    </div>
 
                     <div class="form-actions">
                         <button type="submit" class="btn btn-primary">Submit Request</button>
@@ -102,11 +106,14 @@
     </div>
 
     <footer data-include="../components/footer.html"></footer>
+    <script src="../assets/js/global.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var form = document.getElementById('quote-form');
             var confirmation = document.getElementById('confirmation');
             var summary = document.getElementById('summary');
+            var detailsInput = document.getElementById('details');
+            var detailsCount = document.getElementById('details-count');
 
             // Field validators to keep form client-side only
             var validators = {
@@ -137,6 +144,16 @@
                     el.textContent = '';
                 });
             }
+
+            function updateDetailsCount() {
+                if (!detailsCount) return;
+                var currentLength = detailsInput.value.length;
+                detailsCount.textContent = currentLength + ' / 40 characters (minimum)';
+                detailsCount.classList.toggle('field-hint-warning', currentLength < 40);
+            }
+
+            detailsInput.addEventListener('input', updateDetailsCount);
+            updateDetailsCount();
 
             // Handle submit with inline error display
             form.addEventListener('submit', function (event) {

@@ -12,6 +12,17 @@
     box-sizing: border-box;
 }
 
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -59,12 +70,14 @@ body {
     font-weight: 500;
     padding: 0.35rem 0.75rem;
     border-radius: 999px;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
 .component-header nav .nav-link:hover,
 .component-header nav .nav-link:focus {
     background: rgba(235, 94, 40, 0.15);
     color: var(--accent);
+    transform: translateY(-2px);
 }
 
 .site-wrapper {
@@ -78,6 +91,7 @@ main {
 
 .services-hero {
     padding: 3rem 0 1rem;
+    animation: fadeSlide 0.8s ease both;
 }
 
 .kicker {
@@ -110,6 +124,7 @@ main {
     padding: 2rem;
     margin-top: 2rem;
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.05);
+    animation: fadeSlide 0.9s ease both;
 }
 
 #service-tabs .ui-tabs-nav {
@@ -136,6 +151,7 @@ main {
     border-bottom: none;
     background: #f8f5ee;
     border-radius: 4px 4px 0 0;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 #service-tabs .ui-tabs-nav .ui-tabs-active a {
@@ -180,11 +196,16 @@ main {
     font-weight: 600;
     border: 2px solid transparent;
     display: inline-block;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-primary {
     background: var(--accent);
     color: #fff;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
 }
 
 .cta-banner {
@@ -196,6 +217,7 @@ main {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
+    animation: fadeSlide 0.9s ease both;
 }
 
 .cta-heading {
@@ -231,7 +253,7 @@ main {
 
 footer {
     background: #fff;
-    padding: 1.5rem 0;
+    padding: .75rem 0;
     color: var(--charcoal);
     text-align: center;
 }

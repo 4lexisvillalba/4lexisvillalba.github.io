@@ -12,6 +12,17 @@
     box-sizing: border-box;
 }
 
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -59,12 +70,14 @@ body {
     font-weight: 500;
     padding: 0.35rem 0.75rem;
     border-radius: 999px;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
 .component-header nav .nav-link:hover,
 .component-header nav .nav-link:focus {
     background: rgba(235, 94, 40, 0.15);
     color: var(--accent);
+    transform: translateY(-2px);
 }
 
 .site-wrapper {
@@ -75,9 +88,9 @@ body {
 main {
     padding-bottom: 4rem;
 }
-
 .contact-hero {
     padding: 3rem 0 2rem;
+    animation: fadeUp 0.9s ease both;
 }
 
 .kicker {
@@ -126,6 +139,8 @@ form {
     padding: 2rem;
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.05);
     margin-top: 1.5rem;
+    animation: fadeUp 0.9s ease both;
+    animation-delay: 0.15s;
 }
 
 .form-layout {
@@ -139,6 +154,12 @@ label {
     flex-direction: column;
     font-weight: 600;
     color: var(--ink);
+    gap: 0.35rem;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
     gap: 0.35rem;
 }
 
@@ -158,6 +179,17 @@ textarea {
     resize: vertical;
 }
 
+.field-hint {
+    font-size: 0.85rem;
+    color: var(--charcoal);
+    margin-top: 0.2rem;
+}
+
+.field-hint-warning {
+    color: #c0392b;
+    font-weight: 600;
+}
+
 .form-actions {
     margin-top: 1.5rem;
     display: flex;
@@ -173,6 +205,7 @@ textarea {
     border: 2px solid transparent;
     display: inline-block;
     cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-primary {
@@ -184,6 +217,10 @@ textarea {
     border-color: var(--accent);
     color: var(--accent);
     background: transparent;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
 }
 
 .error {
@@ -230,7 +267,7 @@ textarea {
 
 footer {
     background: #fff;
-    padding: 1.5rem 0;
+    padding: 0.75rem 0;
     color: var(--charcoal);
     text-align: center;
 }
