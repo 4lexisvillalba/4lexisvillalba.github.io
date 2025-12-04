@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --cream: #fffcf2;
+    --stone: #ccc5b9;
+    --charcoal: #403d39;
+    --ink: #252422;
+    --accent: #eb5e28;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+}
+
+.component-header,
+.component-footer {
+    background: #fff;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0.50rem 0;
+}
+
+.brand-title {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--ink);
+}
+
+.brand span {
+    font-size: 0.95rem;
+    color: var(--charcoal);
+}
+
+.component-header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+.component-header nav .nav-link {
+    text-decoration: none;
+    color: var(--ink);
+    font-weight: 500;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+}
+
+.component-header nav .nav-link:hover,
+.component-header nav .nav-link:focus {
+    background: rgba(235, 94, 40, 0.15);
+    color: var(--accent);
+}
+
+.site-wrapper {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+}
+
+main {
+    padding-bottom: 4rem;
+}
+
+.services-hero {
+    padding: 3rem 0 1rem;
+}
+
+.kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+}
+
+.service-title {
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    margin: 0 0 1rem;
+    color: var(--ink);
+}
+
+.services-hero p {
+    color: var(--charcoal);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.services-hero .kicker {
+    color: var(--accent);
+}
+
+.service-tabs {
+    background: #fff;
+    border: 1px solid var(--stone);
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.05);
+}
+
+#service-tabs .ui-tabs-nav {
+    border-bottom: 1px solid var(--stone);
+    padding: 0;
+    background: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+#service-tabs .ui-tabs-nav li {
+    border: none;
+    margin: 0;
+}
+
+#service-tabs .ui-tabs-nav a {
+    text-decoration: none;
+    color: var(--ink);
+    padding: 0.85rem 1.5rem;
+    display: block;
+    font-weight: 600;
+    border: 1px solid var(--stone);
+    border-bottom: none;
+    background: #f8f5ee;
+    border-radius: 4px 4px 0 0;
+}
+
+#service-tabs .ui-tabs-nav .ui-tabs-active a {
+    color: var(--accent);
+    background: #fff;
+    border-color: var(--accent);
+}
+
+#service-tabs article {
+    padding-top: 2rem;
+    font-size: 1.05rem;
+}
+
+.tab-title {
+    margin-top: 0;
+    color: var(--ink);
+    font-size: 1.6rem;
+}
+
+#service-tabs p {
+    color: var(--charcoal);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+#service-tabs ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    color: var(--charcoal);
+    line-height: 1.6;
+}
+
+.inline-link {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.btn {
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 0.85rem 1.65rem;
+    font-weight: 600;
+    border: 2px solid transparent;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #fff;
+}
+
+.cta-banner {
+    margin-top: 2.5rem;
+    padding: 1.75rem 2rem;
+    background: #fff;
+    border: 1px solid var(--stone);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.cta-heading {
+    margin: 0 0 0.25rem;
+}
+
+.cta-banner p {
+    margin: 0;
+    color: var(--charcoal);
+}
+
+.component-footer nav a {
+    text-decoration: none;
+    color: var(--ink);
+    font-weight: 500;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2.75rem;
+    flex-wrap: wrap;
+}
+
+.footer-nav span {
+    color: var(--stone);
+}
+
+.footer-link,
+.footer-link:visited {
+    color: var(--accent);
+}
+
+footer {
+    background: #fff;
+    padding: 1.5rem 0;
+    color: var(--charcoal);
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    .service-tabs {
+        padding: 1.5rem;
+    }
+
+    .cta-banner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

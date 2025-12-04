@@ -1,0 +1,23 @@
+[
+    {
+        "title": "Belmont Craftsman Roof",
+        "type": "Roofing",
+        "location": "Belmont, NC",
+        "description": "Architectural shingle replacement with structural decking repairs, ridge ventilation, and storm-ready flashing.",
+        "image": "../../../images/roofing.jpg"
+    },
+    {
+        "title": "South End Siding Refresh",
+        "type": "Siding",
+        "location": "Charlotte, NC",
+        "description": "Fiber cement siding upgrade with tailored trim and soffit detailing that brings the HOA palette to life.",
+        "image": "../../../images/siding.jpg"
+    },
+    {
+        "title": "Dilworth Porch Revival",
+        "type": "Exterior Remodeling",
+        "location": "Charlotte, NC",
+        "description": "Wraparound porch rebuild featuring timber columns, tongue-and-groove ceilings, and weather-proof decking.",
+        "image": "../../../images/porch.webp"
+    }
+]

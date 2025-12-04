@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --cream: #fffcf2;
+    --stone: #ccc5b9;
+    --charcoal: #403d39;
+    --ink: #252422;
+    --accent: #eb5e28;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+}
+
+.component-header,
+.component-footer {
+    background: #fff;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0.50rem 0;
+}
+
+.brand-title {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--ink);
+}
+
+.brand span {
+    font-size: 0.95rem;
+    color: var(--charcoal);
+}
+
+.component-header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+.component-header nav .nav-link {
+    text-decoration: none;
+    color: var(--ink);
+    font-weight: 500;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+}
+
+.component-header nav .nav-link:hover,
+.component-header nav .nav-link:focus {
+    background: rgba(235, 94, 40, 0.15);
+    color: var(--accent);
+}
+
+.site-wrapper {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+}
+
+main {
+    padding-bottom: 4rem;
+}
+
+.projects-hero {
+    padding: 3rem 0 1rem;
+}
+
+.projects-hero .kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+}
+
+.projects-title {
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    margin: 0 0 1rem;
+}
+
+.projects-hero p {
+    color: var(--charcoal);
+    line-height: 1.6;
+}
+
+.filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    margin: 1.75rem 0;
+}
+
+.filter-row label {
+    font-weight: 600;
+}
+
+.filter-row select {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--stone);
+    border-radius: 4px;
+    background: #fffbf5;
+}
+
+.project-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.project-card {
+    flex: 1 1 260px;
+    border: 1px solid var(--stone);
+    background: #fff;
+    padding: 1rem;
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.08);
+}
+
+.project-title {
+    margin: 0 0 0.35rem;
+    color: var(--accent);
+    font-size: 1.25rem;
+}
+
+.project-card p {
+    margin: 0;
+    color: var(--charcoal);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.project-meta {
+    font-size: 0.85rem;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+}
+
+.status-message {
+    margin-top: 2rem;
+    color: var(--charcoal);
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    z-index: 999;
+}
+
+.lightbox-active {
+    display: flex;
+}
+
+.lightbox-content {
+    background: #fff;
+    padding: 1.5rem;
+    max-width: 700px;
+    width: min(90vw, 700px);
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.25);
+}
+
+.lightbox-content img {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--stone);
+    margin-bottom: 1rem;
+}
+
+.lightbox-close {
+    border: none;
+    background: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--accent);
+    float: right;
+}
+
+.component-footer nav a {
+    text-decoration: none;
+    color: var(--ink);
+    font-weight: 500;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2.75rem;
+    flex-wrap: wrap;
+}
+
+.footer-nav span {
+    color: var(--stone);
+}
+
+.footer-link,
+.footer-link:visited {
+    color: var(--accent);
+}
+
+footer {
+    background: #fff;
+    padding: 1.5rem 0;
+    color: var(--charcoal);
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    .projects-hero {
+        padding: 2rem 0 1rem;
+    }
+}

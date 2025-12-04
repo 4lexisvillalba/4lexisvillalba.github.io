@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact &amp; Request a Quote | T&amp;O Construction</title>
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <script src="../../../scripts/html-include.js" defer></script>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header data-include="../components/header.html"></header>
+
+    <div class="site-wrapper">
+        <main>
+            <!-- Contact info hero -->
+            <section class="contact-hero" aria-labelledby="contact-heading">
+                <p class="kicker">Tell us about your project</p>
+                <h1 id="contact-heading" class="contact-title">Request a quote or ask a question</h1>
+                <p>
+                    Whether you need roofing, siding, remodeling, or a punch list handled, T&amp;O responds within two business days
+                    with a timeline and next steps. Use the form below to share the basics and we’ll coordinate a walkthrough.
+                </p>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> <a href="mailto:jovanyarenasvillalba2003@gmail.com">jovanyarenasvillalba2003@gmail.com</a></p>
+                    <p><strong>Phone:</strong> <a href="tel:17042497841">(704) 249-7841</a></p>
+                    <p><strong>Service area:</strong> Charlotte, Matthews, Mint Hill, Huntersville, Concord</p>
+                </div>
+            </section>
+
+            <!-- Client-side request form -->
+            <section aria-labelledby="quote-form-heading">
+                <h2 id="quote-form-heading" class="section-heading">Request a project estimate</h2>
+                <form id="quote-form" novalidate>
+                    <div class="form-layout">
+                        <label>
+                            Full Name*
+                            <input type="text" name="name" id="name" required>
+                            <span class="error" id="name-error" aria-live="polite"></span>
+                        </label>
+
+                        <label>
+                            Email*
+                            <input type="email" name="email" id="email" required>
+                            <span class="error" id="email-error" aria-live="polite"></span>
+                        </label>
+
+                        <label>
+                            Phone
+                            <input type="tel" name="phone" id="phone" placeholder="(###) ###-####">
+                        </label>
+
+                        <label>
+                            Service Type*
+                            <select name="service" id="service" required>
+                                <option value="">Select a service</option>
+                                <option>Roofing</option>
+                                <option>Siding</option>
+                                <option>Exterior Remodeling</option>
+                                <option>Interior Remodeling</option>
+                                <option>General Repairs / Other</option>
+                            </select>
+                            <span class="error" id="service-error" aria-live="polite"></span>
+                        </label>
+
+                        <label>
+                            Project Location
+                            <input type="text" name="location" id="location" placeholder="Neighborhood or city">
+                        </label>
+
+                        <label>
+                            Budget Range
+                            <select name="budget" id="budget">
+                                <option value="">Select budget</option>
+                                <option>Under $5,000</option>
+                                <option>$5,000–$15,000</option>
+                                <option>$15,000–$35,000</option>
+                                <option>$35,000+</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <label>
+                        Project Description* (minimum 40 characters)
+                        <textarea name="details" id="details" rows="5" required></textarea>
+                        <span class="error" id="details-error" aria-live="polite"></span>
+                    </label>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Submit Request</button>
+                        <button type="reset" class="btn btn-outline">Reset</button>
+                    </div>
+                </form>
+
+                <section id="confirmation" class="confirmation" hidden>
+                    <h2>Thanks for reaching out!</h2>
+                    <p>We’ll review your request and follow up with a detailed estimate plan.</p>
+                    <div id="summary"></div>
+                </section>
+            </section>
+        </main>
+    </div>
+
+    <footer data-include="../components/footer.html"></footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var form = document.getElementById('quote-form');
+            var confirmation = document.getElementById('confirmation');
+            var summary = document.getElementById('summary');
+
+            // Field validators to keep form client-side only
+            var validators = {
+                name: function (value) {
+                    return value.trim() ? '' : 'Please provide your full name.';
+                },
+                email: function (value) {
+                    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? '' : 'Enter a valid email address.';
+                },
+                service: function (value) {
+                    return value ? '' : 'Select the service that best fits your project.';
+                },
+                details: function (value) {
+                    return value.trim().length >= 40 ? '' : 'Describe the project in at least 40 characters.';
+                }
+            };
+
+            function showError(fieldId, message) {
+                var errorEl = document.getElementById(fieldId + '-error');
+                if (errorEl) {
+                    errorEl.textContent = message;
+                }
+            }
+
+            function clearErrors() {
+                var errorEls = form.querySelectorAll('.error');
+                errorEls.forEach(function (el) {
+                    el.textContent = '';
+                });
+            }
+
+            // Handle submit with inline error display
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                clearErrors();
+                var hasErrors = false;
+
+                Object.keys(validators).forEach(function (field) {
+                    var validator = validators[field];
+                    var value = form[field].value;
+                    var error = validator(value);
+                    if (error) {
+                        showError(field, error);
+                        hasErrors = true;
+                    }
+                });
+
+                if (hasErrors) {
+                    confirmation.hidden = true;
+                    summary.textContent = '';
+                    return;
+                }
+
+                var formData = new FormData(form);
+                var details = [
+                    'Name: ' + formData.get('name'),
+                    'Email: ' + formData.get('email'),
+                    'Phone: ' + (formData.get('phone') || 'Not provided'),
+                    'Service: ' + formData.get('service'),
+                    'Location: ' + (formData.get('location') || 'Not specified'),
+                    'Budget: ' + (formData.get('budget') || 'Not specified'),
+                    'Details: ' + formData.get('details').trim()
+                ];
+
+                summary.innerHTML = '<pre>' + details.join('\n') + '</pre>';
+                confirmation.hidden = false;
+                confirmation.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            // Reset button also clears messages
+            form.addEventListener('reset', function () {
+                clearErrors();
+                confirmation.hidden = true;
+                summary.textContent = '';
+            });
+        });
+    </script>
+</body>
+</html>

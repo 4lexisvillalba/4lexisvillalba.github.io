@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --cream: #fffcf2;
+    --stone: #ccc5b9;
+    --charcoal: #403d39;
+    --ink: #252422;
+    --accent: #eb5e28;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+}
+
+.component-header,
+.component-footer {
+    background: #fff;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0.50rem 0;
+}
+
+.brand-title {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--ink);
+}
+
+.brand span {
+    font-size: 0.95rem;
+    color: var(--charcoal);
+}
+
+.component-header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+.component-header nav .nav-link {
+    text-decoration: none;
+    color: var(--ink);
+    font-weight: 500;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+}
+
+.component-header nav .nav-link:hover,
+.component-header nav .nav-link:focus {
+    background: rgba(235, 94, 40, 0.15);
+    color: var(--accent);
+}
+
+.site-wrapper {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+}
+
+main {
+    padding-bottom: 4rem;
+}
+
+.contact-hero {
+    padding: 3rem 0 2rem;
+}
+
+.kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+}
+
+.contact-title {
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    margin: 0 0 1rem;
+}
+
+.contact-hero p {
+    color: var(--charcoal);
+    line-height: 1.6;
+}
+
+.contact-hero .kicker {
+    color: var(--accent);
+}
+
+.contact-info {
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.35rem;
+    color: var(--charcoal);
+}
+
+.contact-info a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.section-heading {
+    margin-top: 0;
+    font-size: 1.75rem;
+    color: var(--ink);
+}
+
+form {
+    background: #fff;
+    border: 1px solid var(--stone);
+    padding: 2rem;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.05);
+    margin-top: 1.5rem;
+}
+
+.form-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    color: var(--ink);
+    gap: 0.35rem;
+}
+
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.85rem;
+    border: 1px solid var(--stone);
+    border-radius: 4px;
+    background: #fffbf5;
+    color: var(--ink);
+}
+
+textarea {
+    resize: vertical;
+}
+
+.form-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.btn {
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 0.85rem 1.65rem;
+    font-weight: 600;
+    border: 2px solid transparent;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #fff;
+}
+
+.btn-outline {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: transparent;
+}
+
+.error {
+    font-size: 0.85rem;
+    color: #c0392b;
+    min-height: 1.2em;
+}
+
+.confirmation {
+    margin-top: 2rem;
+    background: #fff;
+    border: 1px solid var(--stone);
+    padding: 1.75rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.04);
+}
+
+.confirmation pre {
+    background: #f8f5ee;
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+.component-footer nav a {
+    text-decoration: none;
+    color: var(--ink);
+    font-weight: 500;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2.75rem;
+    flex-wrap: wrap;
+}
+
+.footer-nav span {
+    color: var(--stone);
+}
+
+.footer-link,
+.footer-link:visited {
+    color: var(--accent);
+}
+
+footer {
+    background: #fff;
+    padding: 1.5rem 0;
+    color: var(--charcoal);
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    form {
+        padding: 1.5rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

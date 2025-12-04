@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T&amp;O Construction Projects | Roofing, Siding, Remodels</title>
+    <link rel="stylesheet" href="assets/css/projects.css">
+    <script src="../../../scripts/html-include.js" defer></script>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header data-include="../components/header.html"></header>
+
+    <div class="site-wrapper">
+        <main>
+            <!-- Gallery hero intro -->
+            <section class="projects-hero" aria-labelledby="projects-heading">
+                <p class="kicker">Recent build highlights</p>
+                <h1 id="projects-heading" class="projects-title">See what we deliver for Charlotte properties</h1>
+                <p>
+                    Browse roofing, siding, exterior, and interior transformations delivered by T&amp;O. Use the filter to find work
+                    similar to your project, then open any photo to see more detail.
+                </p>
+            </section>
+
+            <!-- Service filter controls -->
+            <section class="filter-row" aria-label="Filter projects">
+                <label for="project-filter">Filter by service:</label>
+                <select id="project-filter">
+                    <option value="All">All services</option>
+                </select>
+            </section>
+
+            <!-- AJAX-driven grid -->
+            <section aria-labelledby="gallery-heading" aria-live="polite">
+                <h2 id="gallery-heading" class="section-heading">Project gallery</h2>
+                <div id="project-gallery" class="project-gallery"></div>
+                <p id="status-message" class="status-message"></p>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal for expanded project detail -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+        <div class="lightbox-content">
+            <button class="lightbox-close" type="button" aria-label="Close project detail">&times;</button>
+            <h2 id="lightbox-title">Project detail</h2>
+            <p class="project-meta" id="lightbox-meta"></p>
+            <img id="lightbox-image" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Expanded project photo">
+            <p id="lightbox-description"></p>
+        </div>
+    </div>
+
+    <footer data-include="../components/footer.html"></footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var gallery = document.getElementById('project-gallery');
+            var filterSelect = document.getElementById('project-filter');
+            var statusMessage = document.getElementById('status-message');
+            var lightbox = document.getElementById('lightbox');
+            var lightboxTitle = document.getElementById('lightbox-title');
+            var lightboxMeta = document.getElementById('lightbox-meta');
+            var lightboxImage = document.getElementById('lightbox-image');
+            var lightboxDescription = document.getElementById('lightbox-description');
+            var closeButton = document.querySelector('.lightbox-close');
+            var projectsData = [];
+
+            function renderOptions(types) {
+                var fragment = document.createDocumentFragment();
+                types.forEach(function (type) {
+                    var option = document.createElement('option');
+                    option.value = type;
+                    option.textContent = type;
+                    fragment.appendChild(option);
+                });
+                filterSelect.appendChild(fragment);
+            }
+
+            function openLightbox(project) {
+                lightboxTitle.textContent = project.title;
+                lightboxMeta.textContent = project.type + ' • ' + project.location;
+                lightboxImage.src = project.image;
+                lightboxImage.alt = project.title + ' larger project photo';
+                lightboxDescription.textContent = project.description;
+                lightbox.classList.add('lightbox-active');
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('lightbox-active');
+            }
+
+            function buildProjectCard(project) {
+                var card = document.createElement('article');
+                card.className = 'project-card';
+                card.tabIndex = 0;
+
+                var heading = document.createElement('h3');
+                heading.className = 'project-title';
+                heading.textContent = project.title;
+
+                var meta = document.createElement('p');
+                meta.className = 'project-meta';
+                meta.textContent = project.type + ' • ' + project.location;
+
+                var description = document.createElement('p');
+                description.textContent = project.description;
+
+                card.appendChild(heading);
+                card.appendChild(meta);
+                card.appendChild(description);
+
+                card.addEventListener('click', function () {
+                    openLightbox(project);
+                });
+
+                card.addEventListener('keypress', function (event) {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        openLightbox(project);
+                    }
+                });
+
+                gallery.appendChild(card);
+            }
+
+            function renderGallery(filterValue) {
+                gallery.innerHTML = '';
+                var filtered = projectsData.filter(function (project) {
+                    return filterValue === 'All' || project.type === filterValue;
+                });
+
+                if (!filtered.length) {
+                    statusMessage.textContent = 'No projects match that filter yet.';
+                    return;
+                }
+
+                statusMessage.textContent = '';
+                filtered.forEach(function (project) {
+                    buildProjectCard(project);
+                });
+            }
+
+            closeButton.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', function (event) {
+                if (event.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            fetch('assets/data/projects.json')
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    projectsData = data;
+                    var types = Array.from(new Set(data.map(function (item) { return item.type; })));
+                    renderOptions(types);
+                    renderGallery('All');
+                })
+                .catch(function () {
+                    statusMessage.textContent = 'Unable to load project gallery right now. Please try again later.';
+                });
+
+            filterSelect.addEventListener('change', function () {
+                renderGallery(filterSelect.value);
+            });
+        });
+    </script>
+</body>
+</html>
